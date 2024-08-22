@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "embed"
 	"log"
 	"net"
 	"os"
@@ -8,10 +9,13 @@ import (
 	"syscall"
 )
 
+//go:embed about.md
+var about []byte
+
 // Render generates smth.
 func Render(msg []byte, conn net.Conn, n int) error {
 
-	_, err := conn.Write(msg[:n])
+	_, err := conn.Write(about)
 	return err
 }
 
