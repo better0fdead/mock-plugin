@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "embed"
+	"fmt"
 	"log"
 	"net"
 	"os"
@@ -53,6 +54,7 @@ func main() {
 			if err != nil {
 				log.Fatal(err)
 			}
+			fmt.Println(buf[:n])
 
 			// Generate smth.
 			err = Render(buf, conn, n)
