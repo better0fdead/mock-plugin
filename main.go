@@ -15,7 +15,9 @@ var about []byte
 
 var tags []string
 
-const description = "I do nothing :/"
+const description = "test1 test1 test1 test1 test1 test1 test1"
+
+const source = "github.com/better0fdead/mock-plugin"
 
 // Render generates smth.
 func Render(msg []byte, conn net.Conn, n int) error {
@@ -83,7 +85,13 @@ func main() {
 				if err != nil {
 					log.Fatal(err)
 				}
+			}
 
+			if string(buf[:n]) == "upd" {
+				_, err := conn.Write([]byte(source))
+				if err != nil {
+					log.Fatal(err)
+				}
 			}
 		}(conn)
 	}
