@@ -1,4 +1,4 @@
-module github.com/better0fdead/mock-plugin
+module github.com/better0fdead/mock-plugin/v2
 
 go 1.22.6
 
