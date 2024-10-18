@@ -1,7 +1,13 @@
-# About
+# swagger-plugin
 
-This plugin echoes input back.
+Для генерации документации в формате [openAPI](https://swagger.io/docs/specification/about/), необходимо выполнить
+команду:
 
-# Important notes
+```bash
+tg plugin run swagger-plugin --ServicePath . --OutFile ../api/swagger.yaml
+```
 
-This plugin does nothing.
+Где,
+
+`ServicePath` - путь до папки с интерфейсом (в норме для `tg` эта папка является рабочей)
+`OutFile` - путь, где будет сохранён результат
